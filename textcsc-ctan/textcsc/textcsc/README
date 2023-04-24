@@ -1,6 +1,6 @@
 textcsc - caps-to-small-caps command
 
-version: 1.0.0
+version: 1.1.0
 
 This package provides a simple command for caps-to-small-caps text, to allow for small caps acronyms to be presented as uppercase in text (useful for things like copying and pasting from a PDF).
 
@@ -12,4 +12,5 @@ For suggestions, feature requests, and bug reports, please use the project's
 GitHub site:  https://github.com/ezgranet/textcsc
 
 Version history: 
+24/04/2023 fixed letterspacing issue 
 10/09/2022 Package creation
