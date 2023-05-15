@@ -85,10 +85,36 @@ Produces:
 	The \textcsc{CIA} and the \textcsc{FBI}
 \end{quote}
 
+
+If you want to convert only capitals to small capitals (for example, because your style guide, like that of  \textit{The Economist} prescribes mixed small-caps and lowercase abbreviations), then you can use the macro \verb!\csconly{#1}! or the switch \verb!\csconlyshape! For example, the commands:
+\begin{minted}[
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=LightGray,
+fontsize=\footnotesize,
+breaklines,
+firstnumber=last
+]
+{latex}
+She earned first an \csconly{MSc} and then a \csconlyshape PhD
+\end{minted}
+
+Produce:
+
+\begin{quote}
+	
+She earned first an \csconly{MSc} and then a \csconlyshape PhD
+\end{quote}
+
+
+\normalfont
+
+
+
 \section{Development}
-Bugs, feature requests, \textit{etc}, should be submitted to the project's official Githup page: (\url{github.com/ezgranet/textcsc}).
+Bugs, feature requests, \textit{etc}, should be submitted to the project's official Github page: (\url{github.com/ezgranet/textcsc}).
 \section{Licence}
-	This project is licensed under the Latex Public Project Licence version 1.3\textit{c}. This documentation is copyright of the author but licensed under \textcsc{CC-BY-SA} 3.0.
+	This project is licensed under the \LaTeX\ Public Project Licence version 1.3\textit{c}. This documentation is copyright of the author but licensed under \textcsc{CC-BY-SA} 3.0.
 	\clearpage 
 \section{Implementation}
 \begin{minted}[
@@ -103,9 +129,9 @@ firstnumber=last
 ]
 {latex}
 
-\def\textcscversionnumber{1.1}
-\ProvidesPackage{textcsc-dev}
-[2023/04/24\textcscversionnumber\
+\def\textcscversionnumber{1.2}
+\ProvidesPackage{textcsc}
+[2023/05/10\textcscversionnumber\
  Command for caps-to-small-caps-text]
 % This work may be distributed and/or modified under the 
 % conditions of the LaTeX Project Public License, either version 1.3c 
@@ -156,19 +182,25 @@ firstnumber=last
 \newcommand{\textcsc}[1]{{\cscshape%
 #1%
 }}
-
+\newcommand{\csconlyshape}{\addfontfeature{RawFeature={+c2sc}}}
+\newcommand{\csconly}[1]{{\csconlyshape%
+#1%
+}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all done
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{minted}
-
 \section{Version History}
+\subsection{\texttt{1.2.0}}
 
+\ttfamily 24 April 2023: added option for only caps to small caps text.
 
 
 \subsection{\texttt{1.1.0}}
+
+
 
 \ttfamily 24 April 2023: Update to fix issue with LetterSpace property  not carrying over.
 

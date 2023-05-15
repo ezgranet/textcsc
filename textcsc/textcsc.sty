@@ -1,6 +1,6 @@
-\def\textcscversionnumber{1.1}
-\ProvidesPackage{textcsc-dev}
-[2023/04/24\textcscversionnumber\
+\def\textcscversionnumber{1.2}
+\ProvidesPackage{textcsc}
+[2023/05/10\textcscversionnumber\
  Command for caps-to-small-caps-text]
 % This work may be distributed and/or modified under the 
 % conditions of the LaTeX Project Public License, either version 1.3c 
@@ -51,7 +51,10 @@
 \newcommand{\textcsc}[1]{{\cscshape%
 #1%
 }}
-
+\newcommand{\csconlyshape}{\addfontfeature{RawFeature={+c2sc}}}
+\newcommand{\csconly}[1]{{\csconlyshape%
+#1%
+}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % all done
